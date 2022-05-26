@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/main.dir/src/Window.cpp.o CMakeFiles/main.dir/src/main.cpp.o -o main  -Wl,-rpath,"/home/navin/programming stuff/Games/top-down/external-libraries/libs/sfml" ../external-libraries/libs/sfml/libsfml-graphics.so ../external-libraries/libs/sfml/libsfml-window.so ../external-libraries/libs/sfml/libsfml-system.so 
