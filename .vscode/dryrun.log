@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/navin/programming/top-down'
+make: Leaving directory '/home/navin/programming/top-down'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
