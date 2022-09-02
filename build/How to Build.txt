@@ -1,0 +1,13 @@
+1. change into this directory. For example:
+   cd "path to this directory"
+
+2. install cmake
+
+3. use command :
+   cmake ../CMakeLists.txt
+
+4. then use make file by running :
+   make
+
+5. execute the game by running :
+   ./main
