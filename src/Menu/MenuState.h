@@ -4,11 +4,14 @@
 #include "../Game/GameState.h"
 #include "../Utils/Globals.h"
 
+
+
 class MenuState
 {
 
 	GameState gameState;
 	globals Globals;
+
 public:
 
 	bool switchMenu;

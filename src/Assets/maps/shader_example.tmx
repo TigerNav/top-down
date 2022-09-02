@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="64" tileheight="64" infinite="0" nextlayerid="6" nextobjectid="26">
+<map version="1.9" tiledversion="1.9.1" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="64" tileheight="64" infinite="0" nextlayerid="6" nextobjectid="35">
  <tileset firstgid="1" name="forest_tileset" tilewidth="64" tileheight="64" tilecount="144" columns="16">
   <image source="forest_tileset.png" width="1024" height="576"/>
  </tileset>
@@ -10,30 +10,23 @@
   <object id="4" x="768" y="1088" width="128" height="64"/>
   <object id="5" x="1024" y="896" width="64" height="64"/>
   <object id="6" x="1152" y="1024" width="64" height="64"/>
-  <object id="7" x="128" y="320" width="64" height="64"/>
   <object id="19" x="768" y="768" width="128" height="64"/>
-  <object id="21" x="845.333" y="798.667"/>
  </objectgroup>
  <objectgroup id="5" name="WaterCollision">
-  <object id="8" x="448" y="64" width="128" height="64"/>
-  <object id="22" x="1024" y="192">
-   <polygon points="0,0 384,0 384,320 320,320 320,384 0,384 0,0"/>
-  </object>
-  <object id="24" x="448" y="64">
-   <polygon points="0,0 128,0 128,384 0,384 0,512 -128,512 -128,320 0,320 0,256 64,256 64,64 0,64"/>
-  </object>
+  <object id="31" x="1029.33" y="204" width="368" height="361.333"/>
+  <object id="33" x="353.333" y="110.667" width="266.667" height="522.667"/>
  </objectgroup>
- <layer id="2" name="Grass" width="30" height="30">
+ <layer id="2" name="Grass" width="30" height="30" locked="1">
   <data encoding="base64" compression="zlib">
    eJxjZmBgYB5kOAaIw2lofgge88NoaG8QECcDcTCS/YV0sjcSimMp8C8jifbiMhsU/qE09C/M3kIk+4Jx+J8W9iKHOy39CcNRQByPxof5M5EO9o/iUTyKR/EoHsWjeBSP4qGLAc+EFao=
   </data>
  </layer>
- <layer id="1" name="Water" width="30" height="30">
+ <layer id="1" name="Water" width="30" height="30" locked="1">
   <data encoding="base64" compression="zlib">
    eJztk0EKwCAMBEWoaGvp/3+rB71ISURN9LADe3QnojHmPL6SHf2U1zLp9f75OW97tuZ0LzWPlpe6v4aXY9X7rvL2/udRZnYI0MScV8FzKzhGcILdj2D3LJdwv88Jwg4AAAD7SF30BFI=
   </data>
  </layer>
- <layer id="3" name="Detail" width="30" height="30">
+ <layer id="3" name="Detail" width="30" height="30" locked="1">
   <data encoding="base64" compression="zlib">
    eJztzjENAAAIA7A9+LeMgp2Ep1XQBO7MdwAAAKgWSIAABg==
   </data>

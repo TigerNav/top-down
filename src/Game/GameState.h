@@ -11,6 +11,8 @@ class GameState
 public:
 	Map map;
 	Player player;
+	globals global;
+
 	GameState();
 	void PollEvents();
 	void Update();

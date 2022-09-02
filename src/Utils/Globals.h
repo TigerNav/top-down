@@ -1,6 +1,7 @@
 #pragma once
 
 #include <tmx/MapLoader.hpp>
+#include <SFML/Graphics.hpp>
 
 struct globals {
 
@@ -11,7 +12,9 @@ struct globals {
 	bool InPause = false;
 
 	float deltaTime = 0.0f;
+	sf::FloatRect waterRects;
 	sf::Clock clock;
+	
 
 	
 

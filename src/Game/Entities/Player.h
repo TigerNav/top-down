@@ -2,14 +2,12 @@
 #include <SFML/Graphics.hpp>
 #include "../../Utils/Animation.h"
 #include "../../Utils/Globals.h"
-#include "../../Utils/Collision.h"
 
 class Player
 {
 private:
 	
 public:
-	Collision collision;
 	float speedX;
 	float speedY;
 	sf::Texture texture;
@@ -21,7 +19,8 @@ public:
 	globals Globals;
 	
 
-	Player();
+	
+	void Playerinit();
 	void Update();
 	void render(sf::RenderWindow *window);
 	

@@ -63,7 +63,11 @@
         "cfenv": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "bitset": "cpp",
+        "complex": "cpp",
+        "future": "cpp",
+        "variant": "cpp"
     },
     "terminal.integrated.shell.windows": "cmd.exe"
 }

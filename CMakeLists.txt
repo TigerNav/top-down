@@ -5,8 +5,6 @@ include(CTest)
 enable_testing()
 
 
-
-
 file(GLOB TARGET_SRC "./src/*.cpp")
 file(GLOB GAME_SRC "./src/Game/*.cpp")
 file(GLOB ENTITY_SRC "./src/Game/Entities/*.cpp")
