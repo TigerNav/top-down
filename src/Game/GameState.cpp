@@ -25,7 +25,6 @@ void GameState::render(sf::RenderWindow *window)
 
 void GameState::collision()
 {
-
 	for (auto waterRects : map.getWaterRects())
 	{
 		if (player.sprite.getGlobalBounds().intersects(waterRects))

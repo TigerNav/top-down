@@ -2,6 +2,10 @@
    cd "path to this directory"
 
 2. install cmake
+   for linux users :
+      Debian based : sudo apt-get install cmake
+      arch based   : sudo pacman -S cmake
+      fedora and red hat based : sudo dnf install cmake
 
 3. use command :
    cmake ../CMakeLists.txt

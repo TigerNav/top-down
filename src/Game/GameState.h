@@ -4,6 +4,8 @@
 #include "Entities/Player.h"
 #include <SFML/Graphics/RenderTarget.hpp>
 #include "../Map/Map.h"
+#include <iostream>
+#include <filesystem>
 
 class GameState
 {

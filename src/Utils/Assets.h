@@ -1,10 +1,12 @@
 #pragma once
 #include <string>
+#include "Utils.h"
 
-using namespace std;
+
 
 namespace Assets {
-	static string Player = "/home/navin/Programming stuff/top-down/src/Assets/characters/00-guide.png";
-	static string mapPath= "/home/navin/Programming stuff/top-down/src/Assets/maps";
-	static string map	 = "shader_example.tmx";
+
+	static std::string Player = getRelativePath() + "/src/Assets/characters/00-guide.png";
+	static std::string mapPath= getRelativePath() + "/src/Assets/maps";
+	static std::string map	 = "shader_example.tmx";
 };

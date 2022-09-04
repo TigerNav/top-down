@@ -71,7 +71,11 @@
         "cassert": "cpp",
         "cerrno": "cpp",
         "cfloat": "cpp",
-        "climits": "cpp"
+        "climits": "cpp",
+        "filesystem": "cpp",
+        "*.inc": "cpp",
+        "codecvt": "cpp",
+        "iomanip": "cpp"
     },
     "terminal.integrated.shell.windows": "cmd.exe"
 }
