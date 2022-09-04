@@ -10,14 +10,14 @@ private:
 public:
 	float speedX;
 	float speedY;
+	float cameraX;
+	float cameraY;
 	sf::Texture texture;
 	sf::Sprite sprite;
 	sf::Clock clock;
 	sf::View PlayerCamera;
 	Animation animation;
 	Animation IdleAnimation;
-	globals Globals;
-	
 
 	
 	void Playerinit();

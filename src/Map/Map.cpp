@@ -21,22 +21,29 @@ void Map::LoadMap()
 				waterRect.push_back(object.getAABB());
 			}
 		}
-		std::cout << waterRect.size() << std::endl;
+
+		if(layer.name == "NormalCollision")
+		{
+			for(auto &object : layer.objects)
+			{
+				normalRect.push_back(object.getAABB());
+			}
+		}
 	}
 }
 void Map::Update()
 {
-
 	Loader.updateQuadTree(sf::FloatRect(0.f, 0.f, 800.f, 600.f));
 }
 void Map::Render(sf::RenderWindow *render)
 {
-
 	render->draw(Loader);
-	Loader.drawLayer(*render, tmx::MapLayer::Debug);
 }
-
 std::vector<sf::FloatRect> Map::getWaterRects()
 {
 	return waterRect;
+}
+std::vector<sf::FloatRect> Map::getNormalRects()
+{
+	return normalRect;
 }

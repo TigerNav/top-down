@@ -7,6 +7,7 @@ GameState::GameState()
 }
 void GameState::PollEvents()
 {
+
 }
 void GameState::Update()
 {
@@ -14,17 +15,71 @@ void GameState::Update()
 	map.Update();
 	player.Update();
 
-	
-
-	for (auto waterRects : map.getWaterRects())
-	{
-		
-		if (player.sprite.getGlobalBounds().intersects(waterRects))
-			std::cout << "water collided with" << std::endl;
-	}
+	collision();
 }
 void GameState::render(sf::RenderWindow *window)
 {
 	map.Render(window);
 	player.render(window);
+}
+
+void GameState::collision()
+{
+
+	for (auto waterRects : map.getWaterRects())
+	{
+		if (player.sprite.getGlobalBounds().intersects(waterRects))
+		{
+		}
+	}
+
+	for (auto normalRects : map.getNormalRects())
+	{
+
+
+		if (player.sprite.getGlobalBounds().intersects(normalRects))
+		{
+
+			if(normalRects.width >= normalRects.height) 
+			{
+
+				if(normalRects.contains({normalRects.left, player.sprite.getPosition().y})) 
+				{
+					// Top side crash
+					player.PlayerCamera.setCenter(player.sprite.getPosition());
+					player.sprite.setPosition(player.sprite.getPosition().x, player.sprite.getPosition().y + 3);
+
+				}
+				else 
+				{
+					// bottom side crash
+					player.PlayerCamera.setCenter(player.sprite.getPosition());
+					player.sprite.setPosition(player.sprite.getPosition().x, player.sprite.getPosition().y - 3);
+
+				}
+
+			}
+
+			if(normalRects.width <= normalRects.height)
+            {
+				
+
+				if(normalRects.contains({player.sprite.getPosition().x + player.sprite.getGlobalBounds().width - 1.f, normalRects.top + 1.f}))
+				{
+					//Right side crash
+					
+					player.PlayerCamera.setCenter(player.sprite.getPosition());
+					player.sprite.setPosition(player.sprite.getPosition().x - 3, player.sprite.getPosition().y);
+				}
+				else
+				{
+					//Left side crash
+					player.PlayerCamera.setCenter(player.sprite.getPosition());
+					player.sprite.setPosition(player.sprite.getPosition().x + 3, player.sprite.getPosition().y);
+				}
+			
+			}
+		
+		}
+	}
 }

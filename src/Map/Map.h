@@ -18,11 +18,13 @@ public:
 	std::vector<tmx::MapLayer> layers;
 	Map();
 	std::vector<sf::FloatRect> waterRect;
+	std::vector<sf::FloatRect> normalRect;
 	void LoadMap();
 	void Update();
 	void Render(sf::RenderWindow* render);
 	std::vector<sf::FloatRect> getWaterRects();
-	
+	std::vector<sf::FloatRect> getNormalRects();
+
 private:
 	sf::RenderWindow *window;
 	

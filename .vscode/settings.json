@@ -67,7 +67,11 @@
         "bitset": "cpp",
         "complex": "cpp",
         "future": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "cassert": "cpp",
+        "cerrno": "cpp",
+        "cfloat": "cpp",
+        "climits": "cpp"
     },
     "terminal.integrated.shell.windows": "cmd.exe"
 }

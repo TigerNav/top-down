@@ -20,27 +20,31 @@ void Player::Update()
 
 	speedX = 0;
 	speedY = 0;
-	
+
 	
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
 		speedY += 0.1;
+		cameraY+= 0.1;
 		isDown = true;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
 		speedY -= 0.1;
+		cameraY-= 0.1;
 		isUp = true;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
 		speedX += 0.1;
+		cameraX+= 0.1;
 		isRight = true;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
 		speedX -= 0.1;
+		cameraX-= 0.1;
 		isLeft = true;
 	}
 
@@ -57,14 +61,14 @@ void Player::Update()
 
 	sprite.setTextureRect(animation.uvRect);
 
-
 	
+
 }
 void Player::render(sf::RenderWindow *window)
 {
 	PlayerCamera.move(speedX, speedY);
+	
 	window->setView(PlayerCamera);
 	window->draw(sprite);
 
-	
 }
