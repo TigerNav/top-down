@@ -14,6 +14,7 @@ struct globals {
 	float deltaTime = 0.0f;
 	sf::FloatRect waterRects;
 	sf::Clock clock;
+	sf::Font font;
 	
 
 	

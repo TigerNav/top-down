@@ -19,6 +19,7 @@ target_include_directories(main PUBLIC ${CMAKE_SOURCE_DIR}/include/)
 target_link_libraries(main ${CMAKE_SOURCE_DIR}/external-libraries/libs/sfml/libsfml-graphics.so 
                             ${CMAKE_SOURCE_DIR}/external-libraries/libs/sfml/libsfml-window.so
                             ${CMAKE_SOURCE_DIR}/external-libraries/libs/sfml/libsfml-system.so
+                            ${CMAKE_SOURCE_DIR}/external-libraries/libs/sfml/libsfml-audio.so
                             ${CMAKE_SOURCE_DIR}/external-libraries/libs/tmx/libtmx-loader.so
                             ${CMAKE_SOURCE_DIR}/external-libraries/libs/tmx/libpugi.so)
 

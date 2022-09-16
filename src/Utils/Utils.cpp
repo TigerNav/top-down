@@ -5,3 +5,4 @@ std::string getRelativePath() {
 	fs::path p = fs::current_path();
     return p.parent_path().string();
 }
+

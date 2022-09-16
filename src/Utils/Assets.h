@@ -8,5 +8,9 @@ namespace Assets {
 
 	static std::string Player = getRelativePath() + "/src/Assets/characters/00-guide.png";
 	static std::string mapPath= getRelativePath() + "/src/Assets/maps";
+	static std::string splashLogo= getRelativePath() + "/src/Assets/Menu/splash-logo.png";
+	static std::string splashSound = getRelativePath() + "/src/Assets/Menu/sound.wav";
+	static std::string menuFont = getRelativePath() + "/src/Assets/Menu/HackbotFreeTrial-8MgA2.otf";
+	static std::string menufont2 = getRelativePath() + "/src/Assets/Menu/kongtext.regular.ttf";
 	static std::string map	 = "shader_example.tmx";
 };

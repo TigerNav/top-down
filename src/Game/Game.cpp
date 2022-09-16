@@ -33,7 +33,7 @@ void Game::run() {
 			}
 
 			menuState.Update();
-			menuState.render();
+			menuState.render(window);
 		}
 		if (Globals.InGame) {
 			
