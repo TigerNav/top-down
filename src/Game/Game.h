@@ -9,7 +9,7 @@ class Game
 {
 public:
 	sf::RenderWindow* window;
-	sf::Event event;
+	
 	
 
 	globals Globals;

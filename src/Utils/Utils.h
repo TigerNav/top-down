@@ -4,7 +4,6 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 
-sf::Mouse mouse;
 
 std::string getRelativePath();
 

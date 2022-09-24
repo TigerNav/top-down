@@ -2,31 +2,39 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-Game::Game() {
+Game::Game()
+{
 	window = new sf::RenderWindow(sf::VideoMode(1600, 800), "bruh");
-	
 }
 
-void Game::run() {
+void Game::run()
+{
 
-	while (window->isOpen()) {
-		while (window->pollEvent(event)) {
-			if (event.type == sf::Event::Closed)
-				exit(0);
-			if (Globals.InMenu) 
+	while (window->isOpen())
+	{
+		while (window->pollEvent(Globals.event))
+		{
+			
+			if (Globals.InMenu)
 				menuState.PollEvents();
 			if (Globals.InGame)
 				gameState.PollEvents();
 			if (Globals.InPause)
 				pauseState.PollEvents();
+			if (Globals.event.type == sf::Event::Closed)
+			{
+				std::cout << "App closed";
+				exit(0);
+			}
 		}
 
 		window->clear();
 
-		if (Globals.InMenu) {
-			
+		if (Globals.InMenu)
+		{
 
-			if (menuState.switchMenu) {
+			if (menuState.switchMenu)
+			{
 				Globals.InGame = true;
 				Globals.InMenu = false;
 				menuState.switchMenu = false;
@@ -35,16 +43,18 @@ void Game::run() {
 			menuState.Update();
 			menuState.render(window);
 		}
-		if (Globals.InGame) {
-			
+		if (Globals.InGame)
+		{
+
 			gameState.Update();
 			gameState.render(window);
 		}
-		else if (Globals.InPause) {
+		else if (Globals.InPause)
+		{
 			pauseState.Update();
 			pauseState.render();
 		}
-			
-		window->display();		
+
+		window->display();
 	}
 }

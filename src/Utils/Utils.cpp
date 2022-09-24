@@ -6,3 +6,11 @@ std::string getRelativePath() {
     return p.parent_path().string();
 }
 
+float getMouseX() {
+    return sf::Mouse::getPosition().x;
+}
+
+float getMouseY() {
+    return sf::Mouse::getPosition().y;
+}
+

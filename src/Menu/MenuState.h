@@ -2,10 +2,12 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "../Utils/Assets.h"
+#include "../Utils/Utils.h"
 #include "../Game/GameState.h"
 #include "../Utils/Globals.h"
 #include "SplashScreen.h"
 
+#define Max_menu_items 3
 
 
 class MenuState
@@ -18,9 +20,7 @@ class MenuState
 	sf::Time splashTime;
 	
 	sf::Font font;
-	sf::Text Start;
-	sf::Text Options;
-	sf::Text Exit;
+	sf::Text mainMenu[Max_menu_items];
 	int menuSelections;
 	
 public:
@@ -32,5 +32,9 @@ public:
 	void PollEvents();
 	void Update();
 	void render(sf::RenderWindow* window);
+
+	void MoveUp();
+	void MoveDown();
+
 };
 

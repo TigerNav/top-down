@@ -64,7 +64,6 @@ void SplashScreen::update() {
 
     if(time.asSeconds() >= 3 && i <= 255) {
         i += 0.1;
-        std::cout << i << std::endl;
         fade.setFillColor(sf::Color(0,0,0,i));
     }
 

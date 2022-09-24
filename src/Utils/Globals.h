@@ -15,7 +15,7 @@ struct globals {
 	sf::FloatRect waterRects;
 	sf::Clock clock;
 	sf::Font font;
-	
+	sf::Event event;
 
 	
 
