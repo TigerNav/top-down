@@ -15,8 +15,27 @@ void Game::run()
 		while (window->pollEvent(Globals.event))
 		{
 			
-			if (Globals.InMenu)
-				menuState.PollEvents();
+			if (Globals.InMenu) {
+				switch (Globals.event.type)
+				{
+				case sf::Event::KeyReleased:
+					switch (Globals.event.key.code)
+					{
+					case sf::Keyboard::Up:
+						std::cout << "shit";
+						menuState.MoveUp();
+						break;
+					case sf::Keyboard::Down:
+						menuState.MoveDown();
+						break;
+					default:
+						break;
+					}
+					break;
+				default:
+					break;
+				}				menuState.PollEvents();
+			}
 			if (Globals.InGame)
 				gameState.PollEvents();
 			if (Globals.InPause)

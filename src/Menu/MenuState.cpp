@@ -32,9 +32,7 @@ MenuState::MenuState()
 void MenuState::PollEvents()
 {
 	
-	if (Globals.event.type == sf::Event::KeyReleased) {
-		std::cout << "bruh";
-	}
+	
 
 	
 }
@@ -43,6 +41,17 @@ void MenuState::Update()
 	splashscreen.update();
 
 	splashTime = splashClock.getElapsedTime();
+
+	switch(menuSelections) {
+		case -1:
+			menuSelections = 2;
+			mainMenu[menuSelections].setFillColor(sf::Color::Green);
+			break;
+		case 3:
+			menuSelections = 0;
+			mainMenu[menuSelections].setFillColor(sf::Color::Green);
+			break;
+	}
 
 }
 void MenuState::render(sf::RenderWindow *window)
@@ -68,23 +77,14 @@ void MenuState::MoveUp()
 		menuSelections--;
 		
 		mainMenu[menuSelections].setFillColor(sf::Color::Green);
-
-		if (menuSelections == -1)
-		{
-			menuSelections = 2;
-		}
-
-	
 }
 
 void MenuState::MoveDown()
 {
 
 		mainMenu[menuSelections].setFillColor(sf::Color::White);
+		
 		menuSelections++;
-		if (menuSelections == 3)
-		{
-			menuSelections == 0;
-		}
+
 		mainMenu[menuSelections].setFillColor(sf::Color::Green);
 }
