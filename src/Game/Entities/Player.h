@@ -12,6 +12,8 @@ public:
 	float speedY;
 	float cameraX;
 	float cameraY;
+	float acceleration;
+	globals Globals;
 	sf::Texture texture;
 	sf::Sprite sprite;
 	sf::Clock clock;
@@ -21,7 +23,7 @@ public:
 
 	
 	void Playerinit();
-	void Update();
+	void Update(float deltaTime);
 	void render(sf::RenderWindow *window);
 	
 };

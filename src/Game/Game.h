@@ -8,17 +8,16 @@
 class Game
 {
 public:
-	sf::RenderWindow* window;
-	
-	
+	sf::RenderWindow *window;
+	sf::Clock deltaClock;
+	float deltaTime;
 
 	globals Globals;
 	MenuState menuState;
 	GameState gameState;
 	PauseState pauseState;
+	
 
 	Game();
 	void run();
-
 };
-

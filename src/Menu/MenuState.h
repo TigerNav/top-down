@@ -32,7 +32,7 @@ public:
 	void PollEvents();
 	void Update();
 	void render(sf::RenderWindow* window);
-
+	void MenuSwitch();
 	void MoveUp();
 	void MoveDown();
 

@@ -7,13 +7,12 @@ GameState::GameState()
 }
 void GameState::PollEvents()
 {
-
 }
-void GameState::Update()
+void GameState::Update(float deltaTime)
 {
 
 	map.Update();
-	player.Update();
+	player.Update(deltaTime);
 
 	collision();
 }
@@ -35,50 +34,43 @@ void GameState::collision()
 	for (auto normalRects : map.getNormalRects())
 	{
 
-
 		if (player.sprite.getGlobalBounds().intersects(normalRects))
 		{
 
-			if(normalRects.width >= normalRects.height) 
+			if (normalRects.width >= normalRects.height)
 			{
 
-				if(normalRects.contains({normalRects.left, player.sprite.getPosition().y})) 
+				if (normalRects.contains({normalRects.left, player.sprite.getPosition().y}))
 				{
 					// Top side crash
 					player.PlayerCamera.setCenter(player.sprite.getPosition());
 					player.sprite.setPosition(player.sprite.getPosition().x, player.sprite.getPosition().y + 3);
-
 				}
-				else 
+				else
 				{
 					// bottom side crash
 					player.PlayerCamera.setCenter(player.sprite.getPosition());
 					player.sprite.setPosition(player.sprite.getPosition().x, player.sprite.getPosition().y - 3);
-
 				}
-
 			}
 
-			if(normalRects.width <= normalRects.height)
-            {
-				
+			if (normalRects.width <= normalRects.height)
+			{
 
-				if(normalRects.contains({player.sprite.getPosition().x + player.sprite.getGlobalBounds().width - 1.f, normalRects.top + 1.f}))
+				if (normalRects.contains({player.sprite.getPosition().x + player.sprite.getGlobalBounds().width - 1.f, normalRects.top + 1.f}))
 				{
-					//Right side crash
-					
+					// Right side crash
+
 					player.PlayerCamera.setCenter(player.sprite.getPosition());
 					player.sprite.setPosition(player.sprite.getPosition().x - 3, player.sprite.getPosition().y);
 				}
 				else
 				{
-					//Left side crash
+					// Left side crash
 					player.PlayerCamera.setCenter(player.sprite.getPosition());
 					player.sprite.setPosition(player.sprite.getPosition().x + 3, player.sprite.getPosition().y);
 				}
-			
 			}
-		
 		}
 	}
 }

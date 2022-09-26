@@ -8,7 +8,7 @@ MenuState::MenuState()
 
 	if (!font.loadFromFile(Assets::menufont2))
 	{
-		std::cout << "shit" << std::endl;
+		std::cout << "cant load font" << std::endl;
 	}
 
 	mainMenu[0].setString("Start");
@@ -31,10 +31,7 @@ MenuState::MenuState()
 }
 void MenuState::PollEvents()
 {
-	
-	
 
-	
 }
 void MenuState::Update()
 {
@@ -53,6 +50,19 @@ void MenuState::Update()
 			break;
 	}
 
+}
+void MenuState::MenuSwitch() {
+	switch(menuSelections) {
+		case 0:
+			switchMenu = true;
+			break;
+		case 1:
+			// options menu
+			break;
+		case 2:
+			exit(0);
+			break;
+	}
 }
 void MenuState::render(sf::RenderWindow *window)
 {

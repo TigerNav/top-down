@@ -11,9 +11,11 @@ void Player::Playerinit() {
 	PlayerCamera.setCenter(sprite.getPosition().x, sprite.getPosition().y);
 	PlayerCamera.setSize(1600, 800);
 
+	acceleration = 300;
+
 	animation.AnimationInitilize(&texture, sf::Vector2u(4, 4), 0.2f);
 }
-void Player::Update()
+void Player::Update(float deltaTime)
 {
 
 	bool isUp = false, isDown = false, isRight = false, isLeft = false;
@@ -25,26 +27,26 @@ void Player::Update()
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
-		speedY += 0.1;
-		cameraY+= 0.1;
+		speedY += acceleration * deltaTime;
+		cameraY+= acceleration * deltaTime;
 		isDown = true;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
-		speedY -= 0.1;
-		cameraY-= 0.1;
+		speedY -= acceleration * deltaTime;
+		cameraY-= acceleration * deltaTime;
 		isUp = true;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
-		speedX += 0.1;
-		cameraX+= 0.1;
+		speedX += acceleration * deltaTime;
+		cameraX+= acceleration * deltaTime;
 		isRight = true;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
-		speedX -= 0.1;
-		cameraX-= 0.1;
+		speedX -= acceleration * deltaTime;
+		cameraX-= acceleration * deltaTime;
 		isLeft = true;
 	}
 
@@ -61,7 +63,7 @@ void Player::Update()
 
 	sprite.setTextureRect(animation.uvRect);
 
-	
+	std::cout << speedY << std::endl;
 
 }
 void Player::render(sf::RenderWindow *window)

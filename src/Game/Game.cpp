@@ -12,6 +12,8 @@ void Game::run()
 
 	while (window->isOpen())
 	{
+		deltaTime = deltaClock.restart().asSeconds();
+
 		while (window->pollEvent(Globals.event))
 		{
 			
@@ -22,11 +24,13 @@ void Game::run()
 					switch (Globals.event.key.code)
 					{
 					case sf::Keyboard::Up:
-						std::cout << "shit";
 						menuState.MoveUp();
 						break;
 					case sf::Keyboard::Down:
 						menuState.MoveDown();
+						break;
+					case sf::Keyboard::Return:
+						menuState.MenuSwitch();
 						break;
 					default:
 						break;
@@ -34,7 +38,8 @@ void Game::run()
 					break;
 				default:
 					break;
-				}				menuState.PollEvents();
+				}	
+				menuState.PollEvents();
 			}
 			if (Globals.InGame)
 				gameState.PollEvents();
@@ -65,7 +70,7 @@ void Game::run()
 		if (Globals.InGame)
 		{
 
-			gameState.Update();
+			gameState.Update(deltaTime);
 			gameState.render(window);
 		}
 		else if (Globals.InPause)
