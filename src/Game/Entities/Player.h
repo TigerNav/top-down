@@ -26,5 +26,7 @@ public:
 	void Update(float deltaTime);
 	void render(sf::RenderWindow *window);
 	
+	sf::Vector2f PlayerCoords();
+	
 };
 

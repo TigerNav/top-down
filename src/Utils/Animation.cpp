@@ -13,6 +13,23 @@ void Animation::AnimationInitilize(sf::Texture* texture, sf::Vector2u imageCount
 	uvRect.height = texture->getSize().y / float(imageCount.y);
 }
 
+void Animation::UpdateIdle(int column, float deltaTime) {
+	currentImage.x = column;
+	totalTime += deltaTime;
+	if (totalTime >= switchTime) {
+		totalTime -= switchTime;
+		currentImage.y++;
+
+		if (currentImage.y >= imageCount.y) {
+			currentImage.y = 0;
+		}
+
+	}
+	uvRect.left = currentImage.x * uvRect.width;
+	uvRect.top = currentImage.y * uvRect.height;
+	
+}
+
 void Animation::Update(int row, float deltaTime) {
 	currentImage.y = row;
 	totalTime += deltaTime;

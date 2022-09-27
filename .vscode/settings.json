@@ -75,7 +75,8 @@
         "filesystem": "cpp",
         "*.inc": "cpp",
         "codecvt": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "source_location": "cpp"
     },
     "terminal.integrated.shell.windows": "cmd.exe"
 }

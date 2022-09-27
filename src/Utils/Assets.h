@@ -12,5 +12,6 @@ namespace Assets {
 	static std::string splashSound = getRelativePath() + "/src/Assets/Menu/sound.wav";
 	static std::string menuFont = getRelativePath() + "/src/Assets/Menu/HackbotFreeTrial-8MgA2.otf";
 	static std::string menufont2 = getRelativePath() + "/src/Assets/Menu/kongtext.regular.ttf";
-	static std::string map	 = "shader_example.tmx";
+	static std::string Npc1		 = getRelativePath() + "/src/Assets/characters/06-conjurer.png";
+ 	static std::string map	 = "shader_example.tmx";
 };

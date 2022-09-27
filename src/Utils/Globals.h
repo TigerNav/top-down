@@ -3,9 +3,8 @@
 #include <tmx/MapLoader.hpp>
 #include <SFML/Graphics.hpp>
 
-struct globals {
-
-	
+struct globals
+{
 
 	bool InMenu = true;
 	bool InGame = false;
@@ -14,8 +13,6 @@ struct globals {
 	sf::FloatRect waterRects;
 	sf::Font font;
 	sf::Event event;
-	
-
 	
 
 };

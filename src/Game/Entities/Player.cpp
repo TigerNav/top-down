@@ -2,7 +2,8 @@
 #include <iostream>
 #include "../../Utils/Assets.h"
 
-void Player::Playerinit() {
+void Player::Playerinit()
+{
 	if (!texture.loadFromFile(Assets::Player))
 		std::cout << "cant load texture" << std::endl;
 	sprite.setTexture(texture);
@@ -23,54 +24,54 @@ void Player::Update(float deltaTime)
 	speedX = 0;
 	speedY = 0;
 
-	
-
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
 		speedY += acceleration * deltaTime;
-		cameraY+= acceleration * deltaTime;
+		cameraY += acceleration * deltaTime;
 		isDown = true;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
 		speedY -= acceleration * deltaTime;
-		cameraY-= acceleration * deltaTime;
+		cameraY -= acceleration * deltaTime;
 		isUp = true;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
 		speedX += acceleration * deltaTime;
-		cameraX+= acceleration * deltaTime;
+		cameraX += acceleration * deltaTime;
 		isRight = true;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
 		speedX -= acceleration * deltaTime;
-		cameraX-= acceleration * deltaTime;
+		cameraX -= acceleration * deltaTime;
 		isLeft = true;
 	}
 
 	sprite.move(speedX, speedY);
 
 	if (isDown)
-		animation.Update(0, clock.restart().asSeconds());
+		animation.Update(0, deltaTime);
 	if (isUp)
-		animation.Update(3, clock.restart().asSeconds());
+		animation.Update(3, deltaTime);
 	if (isRight)
-		animation.Update(2, clock.restart().asSeconds());
+		animation.Update(2, deltaTime);
 	if (isLeft)
-		animation.Update(1, clock.restart().asSeconds());
+		animation.Update(1, deltaTime);
 
 	sprite.setTextureRect(animation.uvRect);
 
-	std::cout << speedY << std::endl;
-
+	
 }
 void Player::render(sf::RenderWindow *window)
 {
 	PlayerCamera.move(speedX, speedY);
-	
+
 	window->setView(PlayerCamera);
 	window->draw(sprite);
+}
 
+sf::Vector2f Player::PlayerCoords() {
+	return sprite.getPosition();
 }

@@ -8,6 +8,7 @@ public:
 	~Animation();
 	void AnimationInitilize(sf::Texture* texture, sf::Vector2u imageCount, float switchTime);
 	void Update(int row, float deltaTime);
+	void UpdateIdle(int Column, float deltaTime);
 
 	sf::IntRect uvRect;
 
