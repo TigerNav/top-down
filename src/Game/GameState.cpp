@@ -16,6 +16,8 @@ void GameState::Update(float deltaTime)
 	player.Update(deltaTime);
 	startnpc.update(deltaTime);
 
+	globals.playerCamera = player.getCamera();
+
 	collision();
 }
 void GameState::render(sf::RenderWindow *window)
@@ -24,7 +26,6 @@ void GameState::render(sf::RenderWindow *window)
 	player.render(window);
 	startnpc.render(window);
 }
-
 
 void GameState::collision()
 {

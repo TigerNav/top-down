@@ -25,6 +25,7 @@ public:
 	void Playerinit();
 	void Update(float deltaTime);
 	void render(sf::RenderWindow *window);
+	sf::View getCamera();
 	sf::Vector2f PlayerCoords();
 	
 };

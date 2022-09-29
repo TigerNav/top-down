@@ -14,5 +14,7 @@ struct globals
 	sf::Font font;
 	sf::Event event;
 	sf::Vector2f PlayerCoords;
+	sf::Clock clock;
+	sf::View playerCamera;
 
 } inline globals;

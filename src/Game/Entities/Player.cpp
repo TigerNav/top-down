@@ -3,8 +3,8 @@
 #include "../../Utils/Globals.h"
 #include "../../Utils/Assets.h"
 
-Player::Player() {
-
+Player::Player()
+{
 }
 
 void Player::Playerinit()
@@ -25,9 +25,9 @@ void Player::Playerinit()
 void Player::Update(float deltaTime)
 {
 	globals.PlayerCoords = sprite.getPosition();
-	
+
 	bool isUp = false, isDown = false, isRight = false, isLeft = false;
- 
+
 	speedX = 0;
 	speedY = 0;
 
@@ -68,8 +68,6 @@ void Player::Update(float deltaTime)
 		animation.Update(1, deltaTime);
 
 	sprite.setTextureRect(animation.uvRect);
-
-	
 }
 
 void Player::render(sf::RenderWindow *window)
@@ -80,6 +78,10 @@ void Player::render(sf::RenderWindow *window)
 	window->draw(sprite);
 }
 
-sf::Vector2f Player::PlayerCoords() {
+sf::Vector2f Player::PlayerCoords()
+{
 	return sprite.getPosition();
+}
+sf::View Player::getCamera() {
+	return PlayerCamera;
 }

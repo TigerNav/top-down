@@ -5,6 +5,7 @@
 #include "../../Utils/Globals.h"
 #include "../../Utils/Assets.h"
 #include "../../Utils/Animation.h"
+#include "../../Utils/TextBox.h"
 
 class StartNPC {
 
@@ -12,6 +13,7 @@ class StartNPC {
     sf::Sprite NPCSprite;
     sf::FloatRect talkBox;
     Animation animation;
+    TextBox textbox;
 
 
 public:

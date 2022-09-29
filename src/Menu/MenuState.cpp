@@ -28,6 +28,9 @@ MenuState::MenuState()
 	mainMenu[2].setFillColor(sf::Color::White);
 	mainMenu[2].setCharacterSize(55);
 	mainMenu[2].setPosition(670, 600);
+
+
+	menuSelections = 0;
 }
 void MenuState::PollEvents()
 {
@@ -38,6 +41,7 @@ void MenuState::Update()
 	splashscreen.update();
 
 	splashTime = splashClock.getElapsedTime();
+
 
 	switch(menuSelections) {
 		case -1:
