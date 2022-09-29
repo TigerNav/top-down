@@ -13,6 +13,6 @@ struct globals
 	sf::FloatRect waterRects;
 	sf::Font font;
 	sf::Event event;
-	
+	sf::Vector2f PlayerCoords;
 
-};
+} inline globals;

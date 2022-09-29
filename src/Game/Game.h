@@ -12,7 +12,7 @@ public:
 	sf::Clock deltaClock;
 	float deltaTime;
 
-	globals Globals;
+	
 	MenuState menuState;
 	GameState gameState;
 	PauseState pauseState;

@@ -8,16 +8,16 @@ void SplashScreen::init() {
     sprite.setTexture(texture);
     sprite.setPosition(590, 50);
 
-    if(!global.font.loadFromFile(Assets::menuFont))
+    if(!globals.font.loadFromFile(Assets::menuFont))
         std::cout << "couldn not load font" << std::endl; 
     text.setString("Unknown Game Company");
-    text.setFont(global.font);
+    text.setFont(globals.font);
     text.setCharacterSize(60);
     text.setStyle(sf::Text::Bold);
     text.setPosition(400, 500);
 
     textfinish.setString("Done");
-    textfinish.setFont(global.font);
+    textfinish.setFont(globals.font);
     textfinish.setCharacterSize(60);
     textfinish.setStyle(sf::Text::Bold);
     textfinish.setPosition(650, 700);

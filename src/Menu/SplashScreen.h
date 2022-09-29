@@ -17,7 +17,6 @@ sf::SoundBuffer sb;
 sf::RectangleShape progressBar;
 sf::RectangleShape progressOutline;
 sf::RectangleShape fade;
-globals global;
 
 float i = 0;
 bool playaudioonce;

@@ -14,14 +14,14 @@ void Game::run()
 	{
 		deltaTime = deltaClock.restart().asSeconds();
 
-		while (window->pollEvent(Globals.event))
+		while (window->pollEvent(globals.event))
 		{
 			
-			if (Globals.InMenu) {
-				switch (Globals.event.type)
+			if (globals.InMenu) {
+				switch (globals.event.type)
 				{
 				case sf::Event::KeyReleased:
-					switch (Globals.event.key.code)
+					switch (globals.event.key.code)
 					{
 					case sf::Keyboard::Up:
 						menuState.MoveUp();
@@ -41,11 +41,11 @@ void Game::run()
 				}	
 				menuState.PollEvents();
 			}
-			if (Globals.InGame)
+			if (globals.InGame)
 				gameState.PollEvents();
-			if (Globals.InPause)
+			if (globals.InPause)
 				pauseState.PollEvents();
-			if (Globals.event.type == sf::Event::Closed)
+			if (globals.event.type == sf::Event::Closed)
 			{
 				std::cout << "App closed";
 				exit(0);
@@ -54,26 +54,26 @@ void Game::run()
 
 		window->clear();
 
-		if (Globals.InMenu)
+		if (globals.InMenu)
 		{
 
 			if (menuState.switchMenu)
 			{
-				Globals.InGame = true;
-				Globals.InMenu = false;
+				globals.InGame = true;
+				globals.InMenu = false;
 				menuState.switchMenu = false;
 			}
 
 			menuState.Update();
 			menuState.render(window);
 		}
-		if (Globals.InGame)
+		if (globals.InGame)
 		{
 
 			gameState.Update(deltaTime);
 			gameState.render(window);
 		}
-		else if (Globals.InPause)
+		else if (globals.InPause)
 		{
 			pauseState.Update();
 			pauseState.render();

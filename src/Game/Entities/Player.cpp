@@ -1,6 +1,11 @@
 #include "Player.h"
 #include <iostream>
+#include "../../Utils/Globals.h"
 #include "../../Utils/Assets.h"
+
+Player::Player() {
+
+}
 
 void Player::Playerinit()
 {
@@ -16,11 +21,13 @@ void Player::Playerinit()
 
 	animation.AnimationInitilize(&texture, sf::Vector2u(4, 4), 0.2f);
 }
+
 void Player::Update(float deltaTime)
 {
-
+	globals.PlayerCoords = sprite.getPosition();
+	
 	bool isUp = false, isDown = false, isRight = false, isLeft = false;
-
+ 
 	speedX = 0;
 	speedY = 0;
 
@@ -64,6 +71,7 @@ void Player::Update(float deltaTime)
 
 	
 }
+
 void Player::render(sf::RenderWindow *window)
 {
 	PlayerCamera.move(speedX, speedY);

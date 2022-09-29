@@ -4,13 +4,7 @@ GameState::GameState()
 {
 	map.LoadMap();
 	player.Playerinit();
-	NPC.push_back(startnpc);
 	startnpc.init();
-
-	for(auto base : NPC) {
-		base.init();
-	}
-	
 }
 void GameState::PollEvents()
 {
@@ -20,13 +14,7 @@ void GameState::Update(float deltaTime)
 
 	map.Update();
 	player.Update(deltaTime);
-
-	for(auto base : NPC) {
-		base.update(deltaTime);
-	}
-
-	std::cout << player.sprite.getPosition().x << std::endl;
-	
+	startnpc.update(deltaTime);
 
 	collision();
 }
@@ -34,16 +22,9 @@ void GameState::render(sf::RenderWindow *window)
 {
 	map.Render(window);
 	player.render(window);
-	for(auto base : NPC) {
-		base.render(window);
-
-		// if(player.PlayerCoords().y <  base.NPCSprite.getPosition().y) {
-		// 	std::cout << "Shit" << std::endl;
-		// }
-
-	}
-
+	startnpc.render(window);
 }
+
 
 void GameState::collision()
 {

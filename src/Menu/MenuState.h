@@ -15,7 +15,6 @@ class MenuState
 
 	GameState gameState;
 	SplashScreen splashscreen;
-	globals Globals;
 	sf::Clock splashClock;
 	sf::Time splashTime;
 	

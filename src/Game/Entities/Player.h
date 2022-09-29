@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "../../Utils/Animation.h"
 #include "../../Utils/Globals.h"
+#include "StartNPC.h"
 
 class Player
 {
@@ -13,7 +14,6 @@ public:
 	float cameraX;
 	float cameraY;
 	float acceleration;
-	globals Globals;
 	sf::Texture texture;
 	sf::Sprite sprite;
 	sf::Clock clock;
@@ -21,11 +21,10 @@ public:
 	Animation animation;
 	Animation IdleAnimation;
 
-	
+	Player();
 	void Playerinit();
 	void Update(float deltaTime);
 	void render(sf::RenderWindow *window);
-	
 	sf::Vector2f PlayerCoords();
 	
 };
