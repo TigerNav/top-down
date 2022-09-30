@@ -14,6 +14,7 @@ namespace Assets {
 	static std::string menufont2 	= getRelativePath() + "/src/Assets/Menu/kongtext.regular.ttf";
 	static std::string Npc1		 	= getRelativePath() + "/src/Assets/characters/06-conjurer.png";
 	static std::string textBox	 	= getRelativePath() + "/src/Assets/UI/Textbox.png";
-	static std::string charBox			= getRelativePath() + "/src/Assets/UI/CharacterBox.png";
+	static std::string charBox		= getRelativePath() + "/src/Assets/UI/CharacterBox.png";
+	static std::string arrowbox		= getRelativePath() + "/src/Assets/UI/Arrow.png";
  	static std::string map	 		= "shader_example.tmx";
 };

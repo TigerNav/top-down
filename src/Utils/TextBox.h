@@ -8,6 +8,8 @@ class TextBox {
 private:
     sf::Texture textbox;
     sf::Texture charbox;
+    sf::Texture arrowbox;
+    sf::Sprite arrowsprite;
     sf::Sprite textsprite;
     sf::Sprite charSprite;
     

@@ -38,7 +38,7 @@ void StartNPC::update(float deltaTime)
     NPCSprite.setTextureRect(animation.uvRect);
     
     textbox.setUvRect(animation.uvRect);
-    textbox.update("kjabnsiduhawnaosndadnawilkasnbdkjanbdkabjkdabskdabdkjabndjkabdabdkabdkabdkjabdabkabdkabdadbabdadbkabddnawdao");
+    textbox.update("kjabnsiduhawnaosndadnawilkasnbdkjanbdkabjkdabskdabdkjabndjkabdabdkasdasdadadasdasasdadadaasdadadaasdasdasdjkanadjnwajnsdnkwnaksndkjwnaksndkanwjnskdnwajsndkawaasdadddadadadadadadaddadsdadbdkabdkjabdabkabdkabdadbabdadbkabddnawdao");
 }
 
 void StartNPC::render(sf::RenderWindow *window)
