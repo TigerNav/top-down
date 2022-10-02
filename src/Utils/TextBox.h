@@ -17,6 +17,7 @@ private:
     std::string newString;
     sf::Sprite charCopySprite;
     const char* newline = "\n";
+    bool resetTextbox;
     
 
 public:
@@ -26,6 +27,7 @@ public:
     void InitTextBox();
     void CharacterSprite(sf::Sprite charTexture);
     void setUvRect(sf::IntRect uvRect);
+    void PlayerUI();
     void update(std::string string);
     void resetText();
     void render(sf::RenderWindow *window);

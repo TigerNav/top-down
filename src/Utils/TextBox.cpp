@@ -29,32 +29,45 @@ void TextBox::setUvRect(sf::IntRect uvRect)
     charCopySprite.setTextureRect(uvRect);
 }
 
-void TextBox::update(std::string string)
+void TextBox::PlayerUI()
 {
-
     textsprite.setPosition(globals.playerCamera.getCenter().x - 550, globals.playerCamera.getCenter().y + 220);
     charSprite.setPosition(globals.playerCamera.getCenter().x - 750, globals.playerCamera.getCenter().y + 220);
     text.setPosition(textsprite.getPosition().x + 20, globals.playerCamera.getCenter().y + 230);
     charCopySprite.setPosition(globals.playerCamera.getCenter().x - 710, globals.playerCamera.getCenter().y + 250);
     arrowsprite.setPosition(globals.playerCamera.getCenter().x + 680, globals.playerCamera.getCenter().y + 350);
+}
 
-    if (globals.clock.getElapsedTime().asSeconds() > 0.01 && characters < string.length())
-    {
-        globals.clock.restart();
-        characters++;
+void TextBox::update(std::string string)
+{
+        if (globals.clock.getElapsedTime().asSeconds() > 0.01 && characters < string.length())
+        {
+            globals.clock.restart();
+            characters++;
 
-        string.insert(60, "\n");
-        string.insert(120, "\n");
-        string.insert(180, "\n");
+            string.insert(60, "\n");
+            string.insert(120, "\n");
+            string.insert(180, "\n");
 
-        newString = string.substr(0, characters);
+            newString = string.substr(0, characters);
 
-        text.setString(newString);
-    }
+            text.setString(newString);
+        }
+
+        if (string.length() <= characters)
+            resetTextbox = true;
 }
 
 void TextBox::resetText()
 {
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+    {
+        if (resetTextbox)
+        {
+            characters = 0;
+        }
+    }
 }
 
 void TextBox::render(sf::RenderWindow *window)
