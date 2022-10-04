@@ -15,9 +15,10 @@ private:
     
     sf::Text text;
     std::string newString;
-    sf::Sprite charCopySprite;
+    sf::Sprite charCopySprite;   
     const char* newline = "\n";
     bool resetTextbox;
+    bool removething;
     
 
 public:
@@ -29,6 +30,8 @@ public:
     void setUvRect(sf::IntRect uvRect);
     void PlayerUI();
     void update(std::string string);
+    void remove();
+    void show();
     void resetText();
     void render(sf::RenderWindow *window);
 

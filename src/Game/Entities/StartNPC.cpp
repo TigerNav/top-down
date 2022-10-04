@@ -39,9 +39,9 @@ void StartNPC::update(float deltaTime)
     
     textbox.setUvRect(animation.uvRect);
     textbox.PlayerUI();
-    textbox.update("ansiodanoindoianoasndioanwodnaodnaodnaidnaosndoaisndoaidnadnasdnadowanaonoinaoidnsondaiowdnaoindoinaonsdnawodnwioddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddda");
+    textbox.update("test 1");
     textbox.resetText();
-    textbox.update("aksdnaoidnaiodnaiodnaodnasddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
+    textbox.update("test 2");
 }
 
 void StartNPC::render(sf::RenderWindow *window)

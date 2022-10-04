@@ -40,22 +40,25 @@ void TextBox::PlayerUI()
 
 void TextBox::update(std::string string)
 {
-        if (globals.clock.getElapsedTime().asSeconds() > 0.01 && characters < string.length())
-        {
-            globals.clock.restart();
-            characters++;
+    if (globals.clock.getElapsedTime().asSeconds() > 0.01 && characters < string.length())
+    {
+        globals.clock.restart();
+        characters++;
 
+        if(string.length() >= 60)
             string.insert(60, "\n");
+        if(string.length() >= 120)
             string.insert(120, "\n");
+        if(string.length() >= 180)
             string.insert(180, "\n");
 
-            newString = string.substr(0, characters);
+        newString = string.substr(0, characters);
 
-            text.setString(newString);
-        }
+        text.setString(newString);
+    }
 
-        if (string.length() <= characters)
-            resetTextbox = true;
+    if (string.length() <= characters)
+        resetTextbox = true;
 }
 
 void TextBox::resetText()
@@ -70,12 +73,22 @@ void TextBox::resetText()
     }
 }
 
+void TextBox::remove() {
+    removething = true;
+}
+
+void TextBox::show() {
+    removething = false;
+}
+
 void TextBox::render(sf::RenderWindow *window)
 {
 
-    window->draw(charSprite);
-    window->draw(textsprite);
-    window->draw(charCopySprite);
-    window->draw(text);
-    window->draw(arrowsprite);
+    if(!removething) {
+        window->draw(charSprite);
+        window->draw(textsprite);
+        window->draw(charCopySprite);
+        window->draw(text);
+        window->draw(arrowsprite);
+    }
 }
