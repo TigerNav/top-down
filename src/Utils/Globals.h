@@ -2,6 +2,7 @@
 
 #include <tmx/MapLoader.hpp>
 #include <SFML/Graphics.hpp>
+#define MAX_SENTENCES 10
 
 struct globals
 {

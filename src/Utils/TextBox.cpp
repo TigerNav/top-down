@@ -9,7 +9,7 @@ void TextBox::InitTextBox()
     textsprite.setTexture(textbox);
     charSprite.setTexture(charbox);
     arrowsprite.setTexture(arrowbox);
-
+    currentSentence = 0;
     characters = 0;
     text.setCharacterSize(30);
     text.setLetterSpacing(2);
@@ -38,57 +38,72 @@ void TextBox::PlayerUI()
     arrowsprite.setPosition(globals.playerCamera.getCenter().x + 680, globals.playerCamera.getCenter().y + 350);
 }
 
-void TextBox::update(std::string string)
+void TextBox::update(std::string convo[])
 {
-    if (globals.clock.getElapsedTime().asSeconds() > 0.01 && characters < string.length())
+
+    if (i < 0)
     {
+        removething = false;
+    }
+
+    if (characters == 0)
+    {
+        for (int i = this->i; i <= 10; i)
+        {
+            stringfromarray = convo[i];
+            break;
+        }
+    }
+
+    if (globals.clock.getElapsedTime().asSeconds() > 0.02 && characters < stringfromarray.length())
+    {
+
         globals.clock.restart();
         characters++;
 
-        if(string.length() >= 60)
-            string.insert(60, "\n");
-        if(string.length() >= 120)
-            string.insert(120, "\n");
-        if(string.length() >= 180)
-            string.insert(180, "\n");
+        if (characters == 60)
+            stringfromarray.insert(60, "\n");
+        if (characters == 120)
+            stringfromarray.insert(120, "\n");
+        if (characters == 180)
+            stringfromarray.insert(180, "\n");
 
-        newString = string.substr(0, characters);
+        newString = stringfromarray.substr(0, characters);
 
         text.setString(newString);
     }
 
-    if (string.length() <= characters)
-        resetTextbox = true;
+    if (characters >= stringfromarray.length())
+    {
+        resetbox = true;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return) && resetbox)
+        {
+            i++;
+            characters = 0;
+            resetbox = false;
+        }
+    }
+
+    if (i > 7)
+    {
+        removething = true;
+    }
 }
 
 void TextBox::resetText()
 {
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
-    {
-        if (resetTextbox)
-        {
-            characters = 0;
-        }
-    }
-}
-
-void TextBox::remove() {
-    removething = true;
-}
-
-void TextBox::show() {
-    removething = false;
 }
 
 void TextBox::render(sf::RenderWindow *window)
 {
 
-    if(!removething) {
+    if (!removething)
+    {
         window->draw(charSprite);
         window->draw(textsprite);
         window->draw(charCopySprite);
         window->draw(text);
-        window->draw(arrowsprite);
+        if (resetbox)
+            window->draw(arrowsprite);
     }
 }

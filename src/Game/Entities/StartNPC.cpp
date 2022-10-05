@@ -9,6 +9,9 @@ void StartNPC::init()
     NPCSprite.scale(5, 5);
     textbox.InitTextBox();
     textbox.CharacterSprite(NPCSprite);
+    convo[0] ="Press the ENTER button in order to go to ";
+    convo[1] ="test 2";
+    convo[2] ="test 3";
 }
 
 void StartNPC::update(float deltaTime)
@@ -36,12 +39,15 @@ void StartNPC::update(float deltaTime)
         animation.UpdateViaCoords(sf::Vector2u(16, 32), 16, 16);
 
     NPCSprite.setTextureRect(animation.uvRect);
-    
+           
+
     textbox.setUvRect(animation.uvRect);
     textbox.PlayerUI();
-    textbox.update("test 1");
+    textbox.update(convo);
     textbox.resetText();
-    textbox.update("test 2");
+    
+
+
 }
 
 void StartNPC::render(sf::RenderWindow *window)

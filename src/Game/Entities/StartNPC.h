@@ -6,6 +6,7 @@
 #include "../../Utils/Assets.h"
 #include "../../Utils/Animation.h"
 #include "../../Utils/TextBox.h"
+#include <list>
 
 class StartNPC {
 
@@ -14,6 +15,8 @@ class StartNPC {
     sf::FloatRect talkBox;
     Animation animation;
     TextBox textbox;
+
+    std::string convo[20];
 
 
 public:

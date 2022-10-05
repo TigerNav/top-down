@@ -78,5 +78,7 @@
         "iomanip": "cpp",
         "source_location": "cpp"
     },
-    "terminal.integrated.shell.windows": "cmd.exe"
+    "terminal.integrated.shell.windows": "cmd.exe",
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "cmake.configureOnOpen": false
 }
